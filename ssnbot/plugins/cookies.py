@@ -1,9 +1,7 @@
 import os
 import json
-from pyrogram import Client, filters
+from pyrogram import filters, Client as app 
 from youtube_dl import YoutubeDL
-
-
 
 YOUTUBE = {
     "access_token": "your_access_token_here",
@@ -11,8 +9,6 @@ YOUTUBE = {
     "refresh_token": "your_refresh_token_here",
     "token_type": "Bearer",
 }
-
-
 
 
 async def check_auth_token():
@@ -31,8 +27,9 @@ async def check_auth_token():
     except Exception:
         return False
 
+app = Client("my_bot")
 
-@Client.on_message(filter("authtoken"))
+@app.on_message(filters.command("authtoken") & filters.user(SUDOERS))
 async def auth_token_status(client, message):
     status_message = "**Auth Token Status:**\nChecking..."
     status_msg = await message.reply_text(status_message)
@@ -55,11 +52,6 @@ async def auth_token_status(client, message):
                 f"**❌ Failed to generate a new token: {str(ex)}**"
             )
 
-
-
-
-
-
 def generate_cookies():
     access_token = YOUTUBE["access_token"]
     refresh_token = YOUTUBE["refresh_token"]
@@ -67,11 +59,7 @@ def generate_cookies():
         f"yt-dlp --cookies cookies.txt --username oauth2 --password {access_token} --write-description --skip-download https://www.youtube.com/watch?v=LLF3GMfNEYU"
     )
 
-
-
-
-
-@Client.on_message(filter("cookies"))
+@app.on_message(filters.command("cookies"))
 async def send_cookies(client, message):
     try:
         generate_cookies()

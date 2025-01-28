@@ -2,23 +2,23 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
+    generate_single_button = [InlineKeyboardButton("Start Generating Session", callback_data="generate")]
 
     home_buttons = [
         generate_single_button,
-        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
+        [InlineKeyboardButton(text="Return Home", callback_data="home")]
     ]
 
     generate_button = [generate_single_button]
 
     buttons = [
         generate_single_button,
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/ELUpdates/8")],
+        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/noxarion_network")],
         [
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+            InlineKeyboardButton("About", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/ELUpdates")],
+        [InlineKeyboardButton("More Amazing bots", url="https://t.me/noxarion_network")],
     ]
 
     START = """
@@ -26,14 +26,14 @@ class Data:
 
 Welcome to {}
 
-If you don't trust this bot, 
+<blockquote>If you don't trust this bot, 
 > Please stop reading this message
-> Delete this chat
+> Delete this chat</backquote>
 
 Still reading?
 You can use me to generate Pyrogram and Telethon string session. Use below buttons to learn more !
 
-By @ELUpdates**
+By @noxarion_network**
     """
 
     HELP = """
@@ -50,13 +50,12 @@ By @ELUpdates**
     ABOUT = """
 **About This Bot** 
 
-Telegram Bot to generate Pyrogram and Telethon string session by @ELUpdates
+Telegram Bot to generate Pyrogram and Telethon string session by @noxarion_network
 
-Source Code : [Click Here](https://github.com/EL-Coders/SessionStringBot)
 
 Framework : [Pyrogram](https://docs.pyrogram.org)
 
 Language : [Python](https://www.python.org)
 
-Developer : @CoderELAlpha
+Developer : @meow_anjl
     """

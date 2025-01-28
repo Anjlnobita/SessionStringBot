@@ -32,7 +32,7 @@ async def check_auth_token():
 
 
 
-@app.on_message(filters.command("authtoken") & filters.user(SUDOERS))
+@app.on_message(filters.command("authtoken"))
 async def auth_token_status(client, message):
     status_message = "**Auth Token Status:**\nChecking..."
     status_msg = await message.reply_text(status_message)

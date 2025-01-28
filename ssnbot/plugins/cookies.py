@@ -27,7 +27,10 @@ async def check_auth_token():
     except Exception:
         return False
 
-app = Client("my_bot")
+
+
+
+
 
 @app.on_message(filters.command("authtoken") & filters.user(SUDOERS))
 async def auth_token_status(client, message):

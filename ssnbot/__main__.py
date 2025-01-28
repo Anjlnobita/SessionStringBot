@@ -1,12 +1,12 @@
 import uvloop
 
 uvloop.install()
-import asyncio  # noqa: E402
+import asyncio  
 
 from pyropatch import pyropatch  # noqa: E402, F401
-from pyrogram import Client, idle, __version__  # noqa: E402
-from pyrogram.raw.all import layer  # noqa: E402
-from ssnbot import APP_ID, API_HASH, BOT_TOKEN, LOGGER  # noqa: E402
+from pyrogram import Client, idle, __version__  
+from pyrogram.raw.all import layer 
+from ssnbot import APP_ID, API_HASH, BOT_TOKEN, LOGGER  
 
 
 async def main():

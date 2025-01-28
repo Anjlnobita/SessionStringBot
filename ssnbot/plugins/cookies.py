@@ -32,7 +32,7 @@ async def check_auth_token():
         return False
 
 
-@app.on_message(filters.command("authtoken") & filters.user(SUDOERS))
+@Client.on_message(filter("authtoken"))
 async def auth_token_status(client, message):
     status_message = "**Auth Token Status:**\nChecking..."
     status_msg = await message.reply_text(status_message)
@@ -71,7 +71,7 @@ def generate_cookies():
 
 
 
-@app.on_message(filters.command("cookies"))
+@Client.on_message(filter("cookies"))
 async def send_cookies(client, message):
     try:
         generate_cookies()

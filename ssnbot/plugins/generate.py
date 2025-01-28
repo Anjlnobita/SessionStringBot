@@ -269,7 +269,7 @@ async def generate_session(
 
     await bot.send_message(
         msg.chat.id,
-        "Successfully generated {} string session. \n\nPlease check your saved messages! \n\nBy @noxarion_network".format(
+        "Successfully generated {} string session. \n\nPlease check your saved messages! \n\n join our network for more updates <b>[ɴᴏxᴀʀɪᴏɴ ɴᴇᴛᴡᴏʀᴋ](https://t.me/noxarion_network)</b>".format(
             "telethon" if telethon else "pyrogram"
         ),
     )

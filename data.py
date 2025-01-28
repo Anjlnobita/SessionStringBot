@@ -37,7 +37,7 @@ By @noxarion_network**
     """
 
     HELP = """
-✨ **Available Commands** ✨
+  **Available Commands**
 
 /about - About The Bot
 /help - This Message

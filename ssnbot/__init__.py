@@ -9,11 +9,11 @@ load_dotenv(override=True)
 pattern = re.compile(r"^.\d+$")
 
 # vars
-APP_ID = os.environ.get("APP_ID", "")
-API_HASH = os.environ.get("API_HASH", "")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-DB_URL = os.environ.get("DB_URL", "")
-OWNER_ID = int(os.environ.get('OWNER_ID', ""))
+APP_ID = 20650066
+API_HASH = "7a4f8ed638f1369a40693574c2835217"
+
+BOT_TOKEN = "7970949227:AAHHqi_yNrnpN4w0criBvVri_YX6D1BmUKg"
+OWNER_ID = 6777860063
 MUST_JOIN = os.environ.get("MUST_JOIN", "")
 ADMINS = [
     int(user) if pattern.search(user) else user

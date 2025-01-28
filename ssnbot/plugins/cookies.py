@@ -1,3 +1,6 @@
+
+"""
+
 import os
 import json
 from pyrogram import filters, Client as app
@@ -42,3 +45,6 @@ async def send_cookies(client, message):
         await message.reply_document(COOKIES_FILE)
     except Exception as e:
         await message.reply_text(f"Error: {str(e)}")
+
+
+"""

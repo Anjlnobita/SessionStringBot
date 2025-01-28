@@ -3,7 +3,7 @@ import uvloop
 uvloop.install()
 import asyncio  
 
-from pyropatch import pyropatch  # noqa: E402, F401
+from pyropatch import pyropatch 
 from pyrogram import Client, idle, __version__  
 from pyrogram.raw.all import layer 
 from ssnbot import APP_ID, API_HASH, BOT_TOKEN, LOGGER  

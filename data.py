@@ -13,7 +13,7 @@ class Data:
 
     buttons = [
         generate_single_button,
-        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/noxarion_network")],
+        [InlineKeyboardButton("Bot Status and More Bots", url="https://t.me/noxarion_network")],
         [
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
             InlineKeyboardButton("About", callback_data="about")

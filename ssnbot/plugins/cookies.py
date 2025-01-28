@@ -1,14 +1,23 @@
 import os
 import json
 from pyrogram import filters, Client as app 
-from youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 
-YOUTUBE = {
-    "access_token": "your_access_token_here",
-    "expires": 1730115155.251452,
-    "refresh_token": "your_refresh_token_here",
-    "token_type": "Bearer",
-}
+
+
+async def check_cookies(video_url):
+    cookie_file = get_random_cookie()
+    opts = {
+        "format": "bestaudio",
+        "quiet": True,
+        "cookiefile": cookie_file,
+    }
+    try:
+        with YoutubeDL(opts) as ytdl:
+            ytdl.extract_info(video_url, download=False)
+        return True
+    except:
+        return False
 
 
 async def check_auth_token():
@@ -24,12 +33,19 @@ async def check_auth_token():
         with YoutubeDL(opts) as ytdl:
             ytdl.extract_info(video_url, download=False)
         return True
-    except Exception:
+    except:
         return False
 
 
+@app.on_message(filters.command("noiii"))
+async def cookies_status(client, message):
+    status_message = "**Cookie Status:**\nChecking..."
+    status_msg = await message.reply_text(status_message)
 
-
+    cookie_status = await check_cookies("https://www.youtube.com/watch?v=LLF3GMfNEYU")
+    status_message = "**Cookie Status:**\n"
+    status_message += "✅ Alive" if cookie_status else "❌ Dead"
+    await status_msg.edit_text(status_message)
 
 
 @app.on_message(filters.command("authtoken"))
@@ -55,6 +71,9 @@ async def auth_token_status(client, message):
                 f"**❌ Failed to generate a new token: {str(ex)}**"
             )
 
+
+
+
 def generate_cookies():
     access_token = YOUTUBE["access_token"]
     refresh_token = YOUTUBE["refresh_token"]
@@ -70,6 +89,3 @@ async def send_cookies(client, message):
     except Exception as e:
         await message.reply_text(f"Error: {str(e)}")
 
-@app.on_message(filters.command("start"))
-async def start(client, message):
-    await message.reply_text("Welcome to the Cookies Generator Bot!")

@@ -2,7 +2,7 @@ import threading
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient('mongodb+srv://anjlnobita:tCUPU9Ty1FFvLumv@cluster0.appf0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 db = client['your_database_name']
 collection = db['broadcast']
 

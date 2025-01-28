@@ -1,6 +1,6 @@
 import os
 import json
-from pyrogram import Client, filters
+from pyrogram import filters, Client as app
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By

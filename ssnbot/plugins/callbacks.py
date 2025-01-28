@@ -77,7 +77,7 @@ async def tele(bot, query):
 
 ERROR_MESSAGE = (
     "Oops! An exception occurred! \n\n**Error** : {} "
-    "\n\nPlease visit @ElUpdates if this message doesn't contain any "
+    "\n\nPlease visit @noxarion_network if this message doesn't contain any "
     "sensitive information and you if want to report this as "
     "this error message is not being logged by us!"
 )
